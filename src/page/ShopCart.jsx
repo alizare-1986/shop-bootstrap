@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import Carts from "../components/Carts";
 import { clear, checkout } from "../features/cart/cartSlice";
-import { Button, Card, Col, Form, Row } from "react-bootstrap";
+import { Button, Card, Col,  Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const ShopCart = () => {
+const ShopCart = ({close}) => {
   const carts = useSelector((state) => state.shopcart.items);
   const state = useSelector((state) => state.shopcart);
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ const ShopCart = () => {
               <Button className=" bg-black " onClick={() => dispatch(clear())}>
                 CLEAR
               </Button>
+              <Link onClick={close} to={'/shop'}>پیج سبد خرید</Link>
             </Row>
           </Col>
         )}

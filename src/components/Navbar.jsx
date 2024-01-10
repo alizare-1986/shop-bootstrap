@@ -36,7 +36,7 @@ function Navbar() {
     </Modal.Header>
    
        <ModalBody >
-        <ShopCart />
+        <ShopCart close={handleCloseModal} />
       </ModalBody>
    
    
