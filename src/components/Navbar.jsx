@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Button, Modal, ModalBody, Navbar as NavbarBs } from "react-bootstrap";
+import { Button, Modal, ModalBody, Navbar as NavbarBs, NavbarText } from "react-bootstrap";
 import { BsCart } from "react-icons/bs";
 import ShopCart from "../page/ShopCart"
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 function Navbar() {
   const [modal, setModal] = useState(false);
   const carts=useSelector(state=>state.shopcart)
@@ -16,6 +17,9 @@ function Navbar() {
   return (
     <>
     <NavbarBs className=" border-bottom border-secondary ">
+      <NavbarBs>
+        <NavbarText ><Link  className=" text-white font-monospace fs-5 m-lg-2 text-decoration-none  " to={'/'}>فروشگاه</Link></NavbarText>
+      </NavbarBs>
       <NavbarBs.Collapse className=" justify-content-end ">
         <Button
           variant=" btn btn-outline-secondary"

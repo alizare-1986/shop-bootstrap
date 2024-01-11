@@ -29,14 +29,15 @@ const ShopCart = ({close}) => {
               {state.total}
             </Card.Text>
 
-            <Row className=" mx-2 m-1 ">
+            <Row className=" mx-2 m-1 align-items-center  justify-content-center flex-column ">
               <Button
-                className=" mb-1 bg-black "
+            
+                className=" mb-1 bg-black w-25 "
                 onClick={() => dispatch(checkout())}
               >
                 checkout
               </Button>
-              <Button className=" bg-black " onClick={() => dispatch(clear())}>
+              <Button className=" bg-black mt-2 w-25" onClick={() => dispatch(clear())}>
                 CLEAR
               </Button>
               <Link onClick={close} to={'/shop'}>پیج سبد خرید</Link>
